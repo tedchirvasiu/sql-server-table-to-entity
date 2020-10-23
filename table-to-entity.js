@@ -37,6 +37,8 @@ function tableToProps(table) {
             propType = "bool";
         } else if (lineLwr.includes("[int]")) {
             propType = "int";
+        } else if (lineLwr.includes("[bigint]")) {
+            propType = "long";
         } else if (lineLwr.includes("[float]")) {
             propType = "float";
         } else if (lineLwr.includes("[decimal]") || lineLwr.includes("number")) {
@@ -44,7 +46,7 @@ function tableToProps(table) {
         } else if (lineLwr.includes("[datetime]")) {
             propType = "DateTime";
         } else if (lineLwr.includes("[time]")) {
-            propType = "TimeOffset";
+            propType = "TimeSpan";
         } else {
             propType = "UNKNOWN_TYPE";
         }
